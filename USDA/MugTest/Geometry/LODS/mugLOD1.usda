@@ -1,0 +1,54 @@
+#usda 1.0
+(
+    defaultPrim = "mugLOD1"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "mugLOD1" (
+    kind = "component"
+)
+{
+    def Cylinder "mainBody"
+    {
+        uniform token axis = "Z"
+        float3[] extent = [(-1, -1, -0.5), (1, 1, 0.5)]
+        double height = 1
+        double radius = 1
+        matrix4d xformOp:transform = ( (0.75, 0, 0, 0), (-0, -0.75, 3.278353948462086e-8, -0), (-0, -3.278353948462086e-8, -0.75, -0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Cylinder "handleTop"
+    {
+        uniform token axis = "Z"
+        float3[] extent = [(-1, -1, -0.5), (1, 1, 0.5)]
+        double height = 1
+        double radius = 1
+        matrix4d xformOp:transform = ( (-4.440892164675075e-17, 0, -0.20000000298023224, 0), (-0.11471531540155414, 0.1638303995132446, 2.5471916887188447e-17, -0), (0.49149125814437866, 0.34414589405059814, -1.0913298223877514e-16, -0), (1, 0.5, 0.5, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Cylinder "handleMiddle"
+    {
+        uniform token axis = "Z"
+        float3[] extent = [(-1, -1, -0.5), (1, 1, 0.5)]
+        double height = 1
+        double radius = 1
+        matrix4d xformOp:transform = ( (0.20000000298023224, 0, 0, 0), (-0, 0.20000000298023224, -2.841240136036657e-8, -0), (-0, 8.742278024865422e-9, 0.6499999761581421, -0), (1, 0.5, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Cylinder "handleButtom"
+    {
+        uniform token axis = "Z"
+        float3[] extent = [(-1, -1, -0.5), (1, 1, 0.5)]
+        double height = 1
+        double radius = 1
+        matrix4d xformOp:transform = ( (-4.440892164675075e-17, 0, -0.20000000298023224, 0), (-0.11471531540155414, 0.1638303995132446, 2.5471916887188447e-17, -0), (0.49149125814437866, 0.34414589405059814, -1.0913298223877514e-16, -0), (1, 0.5, -0.5, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

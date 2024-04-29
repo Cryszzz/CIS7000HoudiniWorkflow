@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "mug_geometry"
+    endTimeCode = 177
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 177
+    subLayers = [
+        @./Geometry/mug.usda@,
+        @./Material/material.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+

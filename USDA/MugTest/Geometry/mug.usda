@@ -1,0 +1,67 @@
+#usda 1.0
+(
+    defaultPrim = "mug_geometry"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "mug_geometry" (
+    variants = {
+        string material = "Whitepaint"
+        string model = "LOD2"
+    }
+    prepend variantSets = ["material", "model"]
+)
+{
+    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+    variantSet "model" = {
+        "LOD0" {
+            over "mugLOD0" (
+                prepend references = @./LODS/mugLOD0.usda@</mugLOD0>
+            )
+            {
+            }
+
+        }
+        "LOD1" {
+            over "mugLOD1" (
+                prepend references = @./LODS/mugLOD1.usda@</mugLOD1>
+            )
+            {
+            }
+
+        }
+        "LOD2" {
+            over "mugLOD2" (
+                prepend references = @./LODS/mugLOD2.usda@</mugLOD2>
+            )
+            {
+            }
+
+        }
+    }
+    variantSet "material" = {
+        "Aluminum" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        ) {
+            rel material:binding = </Material/aluminum>
+
+        }
+        "Gold" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        ) {
+            rel material:binding = </Material/gold>
+
+        }
+        "Whitepaint" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        ) {
+            rel material:binding = </Material/whitepaint>
+
+        }
+    }
+}
+
