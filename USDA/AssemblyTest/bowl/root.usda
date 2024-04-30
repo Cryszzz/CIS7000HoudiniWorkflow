@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "_geometry"
+    endTimeCode = 192
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 192
+    subLayers = [
+        @../Geometry/.usda@,
+        @../Material/material.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+

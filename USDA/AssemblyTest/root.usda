@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    endTimeCode = 192
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 192
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "twoball" (
+    kind = "assembly"
+)
+{
+    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+    def "table" (
+        kind = "component"
+        prepend references = @./table/root.usda@
+    )
+    {
+        matrix4d xformOp:transform
+        matrix4d xformOp:transform:xform1 = ( (0.5555555634545384, 0, 0, 0), (0, 0.5555555634545384, 0, 0), (0, 0, 0.5555555634545384, 0), (0.3024595379829407, 1.4639068841934204, 0.3006454110145569, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:xform1"]
+    }
+
+    def "bowl" (
+        kind = "component"
+        prepend references = @./bowl/root.usda@</Material>
+    )
+    {
+    }
+}
+
