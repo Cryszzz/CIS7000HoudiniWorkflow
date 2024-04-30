@@ -6,8 +6,8 @@
     metersPerUnit = 1
     startTimeCode = 192
     subLayers = [
-        @../Bowl/Geometry/bowl.usda@,
-        @../Bowl/Material/material.usda@
+        @./Geometry/bowl.usda@,
+        @./Material/material.usda@
     ]
     timeCodesPerSecond = 24
     upAxis = "Y"
